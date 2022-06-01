@@ -13,5 +13,8 @@
   "Wartość elementu a<sub>n</sub> otrzymujemy poprzez wykonanie działania 2<sup>n</sup>&nbsp;*&nbsp;x, gdzie x jest 1 lub 0.": "Значення елемента можна отримати, виконавши операцію 2<sub>n</sub>&nbsp;*&nbsp;x, де x дорівнює 1 або 0.",
   "System szesnastkowy to kolejny pozycyjny system liczbowy. System ten zajmuje bardzo ważne miejsce w informatyce. Oprócz liczb, wykorzystuje się w nim również wybrane litery.": "Шістнадцяткова система є ще однією позиційною системою числення. Ця система займає дуже важливе місце в інформатиці. Крім цифр, використовуються також виділені літери.",
   "System czwórkowy działa analogicznie do systemu binarnego. Różnicą jest to, że zamiast 2 kombinacji (0, 1) jest ich 4 (0, 1, 2, 3).": "Квадратна система працює так само, як і двійкова система. Різниця в тому, що замість 2 комбінацій (0, 1) є 4 (0, 1, 2, 3).",
-  "System ósemkowy działa analogicznie do systemu binarnego. Różnicą jest to, że zamiast 2 kombinacji (0, 1) jest ich 8 (0, 1, 2, 3, 4, 5, 6, 7).": "Вісімкова система працює так само, як і двійкова. Різниця в тому, що замість 2 комбінацій (0, 1) їх 8 (0, 1, 2, 3, 4, 5, 6, 7)."
+  "System ósemkowy działa analogicznie do systemu binarnego. Różnicą jest to, że zamiast 2 kombinacji (0, 1) jest ich 8 (0, 1, 2, 3, 4, 5, 6, 7).": "Вісімкова система працює так само, як і двійкова. Різниця в тому, що замість 2 комбінацій (0, 1) їх 8 (0, 1, 2, 3, 4, 5, 6, 7).",
+  "Ćwiczenia": "Вправи",
+  "Odpowiedź": "Відповідь",
+  "Zamień liczbę": "Поміняйте номер місцями"
 }

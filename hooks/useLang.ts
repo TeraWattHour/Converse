@@ -17,6 +17,7 @@ export default function useLang() {
     if (good) {
       setL(selected as Languages);
     } else {
+      // console.log("here, lang");
       setLanguage(Languages.pl);
     }
   }, []);

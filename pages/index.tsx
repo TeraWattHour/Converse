@@ -14,10 +14,11 @@ import BinaryHelp from "../components/conversions/binary";
 import HexadecimalHelp from "../components/conversions/hexadecimal";
 import OctalHelp from "../components/conversions/octal";
 import QuaternaryHelp from "../components/conversions/quaternary";
+import Excercises from "../components/excersices";
 
 const HELP = [BinaryHelp, HexadecimalHelp, OctalHelp, QuaternaryHelp];
 export default function Home() {
-  const { language: l, setLanguage } = useLang();
+  const { language: l } = useLang();
   const c = useContext(TranslationContext);
   const { __ } = useTranslation(c, l);
   const [values, setValues] = useState({
@@ -143,6 +144,9 @@ export default function Home() {
         </div>
         <div className="mt-10">
           {help != -1 && React.createElement(HELP[help])}
+        </div>
+        <div className="mt-10">
+          <Excercises />
         </div>
       </div>
       <Footer />
