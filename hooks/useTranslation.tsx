@@ -9,14 +9,7 @@ export default function useTranslation(c: object, lang: Languages) {
   }, [lang]);
 
   function __(key: string, type?: string) {
-    if (type == "string") {
-      return translations?.[key] || key;
-    }
-    return (
-      <div
-        dangerouslySetInnerHTML={{ __html: translations?.[key] || key }}
-      ></div>
-    );
+    return translations?.[key] || key;
   }
 
   return { __ };

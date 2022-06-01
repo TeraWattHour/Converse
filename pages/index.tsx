@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../components/navbar";
 import useLang from "../hooks/useLang";
 import styles from "../styles/Home.module.css";
@@ -11,12 +11,15 @@ import __ from "../utils/getTranslation";
 import { TranslationContext } from "./_app";
 import useTranslation from "../hooks/useTranslation";
 import BinaryHelp from "../components/conversions/binary";
+import HexadecimalHelp from "../components/conversions/hexadecimal";
+import OctalHelp from "../components/conversions/octal";
+import QuaternaryHelp from "../components/conversions/quaternary";
 
+const HELP = [BinaryHelp, HexadecimalHelp, OctalHelp, QuaternaryHelp];
 export default function Home() {
   const { language: l, setLanguage } = useLang();
   const c = useContext(TranslationContext);
   const { __ } = useTranslation(c, l);
-  const [value, setValue] = useState<string>("");
   const [values, setValues] = useState({
     decimal: 0,
     binary: "0",
@@ -24,6 +27,7 @@ export default function Home() {
     quaternary: "0",
     octal: "0",
   });
+  const [help, setHelp] = useState(0);
 
   const setDecimal = (number: string) => {
     const integer = parseInt(number);
@@ -68,7 +72,10 @@ export default function Home() {
           <div className={classes("border _rounded-lg px-3 py-2")}>
             <div className="text-lg font-medium text-center flex flex-row items-center justify-center">
               <span className="mr-2">{__("System binarny")}</span>{" "}
-              <FiHelpCircle />
+              <FiHelpCircle
+                className="cursor-pointer"
+                onClick={() => setHelp((x) => (x == 0 ? -1 : 0))}
+              />
             </div>
             <input
               value={values.binary}
@@ -83,7 +90,10 @@ export default function Home() {
           <div className={classes("border _rounded-lg px-3 py-2")}>
             <div className="text-lg font-medium text-center flex flex-row items-center justify-center">
               <span className="mr-2">{__("System szesnastkowy")}</span>{" "}
-              <FiHelpCircle />
+              <FiHelpCircle
+                className="cursor-pointer"
+                onClick={() => setHelp((x) => (x == 1 ? -1 : 1))}
+              />
             </div>
             <input
               type="text"
@@ -98,7 +108,10 @@ export default function Home() {
           <div className={classes("border _rounded-lg px-3 py-2")}>
             <div className="text-lg font-medium text-center flex flex-row items-center justify-center">
               <span className="mr-2">{__("System ósemkowy")}</span>{" "}
-              <FiHelpCircle />
+              <FiHelpCircle
+                className="cursor-pointer"
+                onClick={() => setHelp((x) => (x == 2 ? -1 : 2))}
+              />
             </div>
             <input
               type="text"
@@ -113,7 +126,10 @@ export default function Home() {
           <div className={classes("border _rounded-lg px-3 py-2")}>
             <div className="text-lg font-medium text-center flex flex-row items-center justify-center">
               <span className="mr-2">{__("System czwórkowy")}</span>{" "}
-              <FiHelpCircle />
+              <FiHelpCircle
+                className="cursor-pointer"
+                onClick={() => setHelp((x) => (x == 3 ? -1 : 3))}
+              />
             </div>
             <input
               type="text"
@@ -127,7 +143,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10">
-          <BinaryHelp />
+          {help != -1 && React.createElement(HELP[help])}
         </div>
       </div>
       <Footer />
