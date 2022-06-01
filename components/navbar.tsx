@@ -27,6 +27,7 @@ function Navbar() {
           <div className="flex flex-row space-x-2">
             {langs.map((lan, x) => (
               <div
+                key={x}
                 className={classes(
                   "cursor-pointer relative w-[32px] h-[20px] hover:rounded-md overflow-hidden transition-all duration-500",
                   lan.action == language && "ring-2 ring-black"

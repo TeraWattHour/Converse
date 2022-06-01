@@ -7,6 +7,7 @@ export default function Footer() {
       <a
         href="https://terawatthour.dev"
         target={"_blank"}
+        rel="noreferrer"
         className="font-medium"
       >
         TeraWattHour
