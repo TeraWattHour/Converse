@@ -233,15 +233,13 @@ export default function Excercises() {
       )}
       {results && (
         <div className="flex flex-row flex-wrap items-center justify-center mt-8">
-          {results
-            .reverse()
-            .map((result, x) =>
-              result == "correct" ? (
-                <AiOutlineCheck key={x} className="text-3xl text-green-500" />
-              ) : (
-                <AiFillCloseSquare key={x} className="text-3xl text-red-600" />
-              )
-            )}
+          {results.map((result, x) =>
+            result == "correct" ? (
+              <AiOutlineCheck key={x} className="text-3xl text-green-500" />
+            ) : (
+              <AiFillCloseSquare key={x} className="text-3xl text-red-600" />
+            )
+          )}
         </div>
       )}
     </div>
