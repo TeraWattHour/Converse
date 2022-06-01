@@ -5,7 +5,7 @@ const { serverRuntimeConfig } = getConfig();
 
 export default function handler(req, res) {
   const files = fs.readdirSync(
-    path.join(serverRuntimeConfig.PROJECT_ROOT, "translations")
+    path.join(serverRuntimeConfig.PROJECT_ROOT, "public", "translations")
   );
   const translations = {};
   for (const file of files) {
