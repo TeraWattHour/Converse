@@ -41,6 +41,10 @@ export default function Excercises() {
   }, []);
 
   useEffect(() => {
+    setQuestion(() => setRandom());
+  }, [diffuculty]);
+
+  useEffect(() => {
     setAnswer("");
   }, [question]);
 
@@ -172,7 +176,29 @@ export default function Excercises() {
   };
 
   return (
-    <div className="border px-4 py-3">
+    <div className="border px-4 py-3 relative">
+      <div
+        className="absolute top-2 left-3"
+        onClick={() => {
+          if (diffuculty === Diffuculty.Hard) {
+            setDiffuculty(Diffuculty.Easy);
+          } else if (diffuculty === Diffuculty.Medium) {
+            setDiffuculty(Diffuculty.Hard);
+          } else {
+            setDiffuculty(Diffuculty.Medium);
+          }
+        }}
+      >
+        {diffuculty === Diffuculty.Hard && (
+          <span className="text-red-600 font-medium">{__("Trudne")}</span>
+        )}
+        {diffuculty === Diffuculty.Easy && (
+          <span className="text-green-600 font-medium">{__("Łatwe")}</span>
+        )}
+        {diffuculty === Diffuculty.Medium && (
+          <span className="text-yellow-500 font-medium">{__("Średnie")}</span>
+        )}
+      </div>
       <div className="text-xl font-medium text-center mb-1">
         {__("Ćwiczenia")}
       </div>

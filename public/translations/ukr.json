@@ -16,5 +16,8 @@
   "System ósemkowy działa analogicznie do systemu binarnego. Różnicą jest to, że zamiast 2 kombinacji (0, 1) jest ich 8 (0, 1, 2, 3, 4, 5, 6, 7).": "Вісімкова система працює так само, як і двійкова. Різниця в тому, що замість 2 комбінацій (0, 1) їх 8 (0, 1, 2, 3, 4, 5, 6, 7).",
   "Ćwiczenia": "Вправи",
   "Odpowiedź": "Відповідь",
-  "Zamień liczbę": "Поміняйте номер місцями"
+  "Zamień liczbę": "Поміняйте номер місцями",
+  "Trudne": "складний рівень",
+  "Średnie": "середній рівень",
+  "Łatwe": "легкий рівень"
 }
