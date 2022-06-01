@@ -4,13 +4,12 @@ import getConfig from "next/config";
 const { serverRuntimeConfig } = getConfig();
 
 export default function handler(req, res) {
-  const files = fs.readdirSync(
-    path.join(serverRuntimeConfig.PROJECT_ROOT, "public", "translations")
-  );
+  const dir = path.resolve("./public/translations");
+  const files = fs.readdirSync(dir);
   const translations = {};
   for (const file of files) {
     const fileContent = fs.readFileSync(
-      path.join(serverRuntimeConfig.PROJECT_ROOT, "translations", file),
+      path.resolve("./public/translations", file),
       "utf-8"
     );
     const lang = file.split(".")[0];
